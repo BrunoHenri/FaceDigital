@@ -4,6 +4,7 @@
         content="IE=Edge"
         charset="UTF-8">
     <head>
+        <script type="text/javascript" src="js/validacao.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <title>Eleve</title>
@@ -29,66 +30,67 @@
         <img class="image" src="img/image.png">
 
         <div class="retangulo2 float-right">
-
-            <form>
-                <div class="dados-acesso"><br>
-                    <p>Dados de Acesso</p>
-                </div><br>
+            <form name="form" method="post" action="index.html" onsubmit="validacao(this);">
+                <div class="form-group row">
+                    <label for="descric" class="col-sm-1 col-form-label"></label>
+                    <div class="dados-desg"><p>Dados de Acesso</p></div>
+                </div>
                 <div class="form-group row">
                     <label for="inputName" class="col-sm-1 col-form-label"></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputName" placeholder="Nome">
-                            </div>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName" name="nome" placeholder="Nome">
                     </div>
+                </div>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-1 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Email">
                         </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-1 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+                            <input type="password" class="form-control" id="inputPassword3" name="senha" placeholder="Senha">
                         </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword2" class="col-sm-1 col-form-label"> </label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword2" placeholder="Confirmar Senha">
+                            <input type="password" class="form-control" id="inputPassword2" name="confsenha" placeholder="Confirmar Senha">
                             </div>
                 </div>
-                <div class="dados-empresa"><br>
-                    <p>Dados da Empresa</p>
-                </div><br>
+                <div class="form-group row">
+                        <label for="descric" class="col-sm-1 col-form-label"></label>
+                        <div class="dados-desg"><p>Dados da Empresa</p></div>
+                    </div>
                 <div class="form-group row">
                         <label for="inputCNPJ" class="col-sm-1 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="inputCNPJ" placeholder="CNPJ">
+                                    <input type="number" class="form-control" id="inputCNPJ" name="cnpj"  placeholder="CNPJ">
                                 </div>
                         </div>
                     <div class="form-group row">
                         <label for="inputRSocial" class="col-sm-1 col-form-label"></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputRSocial" placeholder="Razão Social">
+                                <input type="text" class="form-control" id="inputRSocial" name="rsocial"  placeholder="Razão Social">
                             </div>
                     </div>
                     <div class="form-group row">
                             <label for="inputNameF" class="col-sm-1 col-form-label"></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputNameF" placeholder="Nome Fantasia">
+                                        <input type="text" class="form-control" id="inputNameF" name="nfantasia"  placeholder="Nome Fantasia">
                             </div>
                     </div>
                     <div class="form-group row">
                             <label for="inputSite" class="col-sm-1 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSite" placeholder="Site">
+                                    <input type="text" class="form-control" id="inputSite" name="site"  placeholder="Site">
                             </div>
                     </div>
                     <div class="form-group row">
                             <label for="inputPhone" class="col-sm-1 col-form-label"></label>
                                 <div class="col-sm-10">
-                                        <input type="phone" class="form-control" id="inputPhone" placeholder="Telefone">
+                                        <input type="phone" class="form-control" id="inputPhone" name="tel"  placeholder="Telefone">
                                 </div>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -97,7 +99,7 @@
                         termos de serviço</label>
                     </div>
                     <div class="col-sm-3">
-                        <button class="bCadastro btn btn-primary col-sm-" type="submit">Concluir Cadastro</button>
+                        <button class="bCadastro btn btn-primary col-sm-" type="submite" onclick="return validacao()" value="Enviar">Concluir Cadastro</button>
                     </div>
 
         </form>
@@ -115,12 +117,12 @@
                 <div class="card text-rodape">
                   <div class="card-body">
                     <h5 class="card-title titulo-rodape">MAPA DE NAVEGAÇÃO</h5>
-                    <p class="card-text">Conheça</p>
-                    <p class="card-text">Planos</p>
-                    <p class="card-text">Blog</p>
-                    <p class="card-text">Sou Cliente</p>
-                    <p class="card-text">Cadastra-se</p>
-                    <p class="card-text">Contato</p>
+                    <a class="card-text link-enc" href="https://elevecrm.com.br/conheca">Conheça</a><br>
+                    <a class="card-text link-enc" href="https://elevecrm.com.br/planos">Planos</a><br>
+                    <a class="card-text link-enc" href="https://blog.elevecrm.com.br/">Blog</a><br>
+                    <a class="card-text link-enc" href="https://app.elevecrm.com.br/login">Sou Cliente</a><br>
+                    <a class="card-text link-enc" href="https://elevecrm.com.br/planos">Cadastra-se</a><br>
+                    <a class="card-text link-enc" href="https://elevecrm.com.br/contato">Contato</a><br>
                   </div>
                 </div>
                 <div class="card text-rodape">
